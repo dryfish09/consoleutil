@@ -113,28 +113,28 @@ inline void printc(const std::string_view& msg, color col) {
 inline void setBg(color col) {
     switch (col) {
         case Red:
-        std::cout << rang::fg::red;
+        std::cout << rang::bg::red;
         break;
         case Green:
-        std::cout << rang::fg::green;
+        std::cout << rang::bg::green;
         break;
         case Blue:
-        std::cout << rang::fg::blue;
+        std::cout << rang::bg::blue;
         break;
         case Gray:
-        std::cout << rang::fg::gray;
+        std::cout << rang::bg::gray;
         break;
         case Cyan:
-        std::cout << rang::fg::cyan;
+        std::cout << rang::bg::cyan;
         break;
         case Yellow:
-        std::cout << rang::fg::yellow;
+        std::cout << rang::bg::yellow;
         break;
         case Magenta:
-        std::cout << rang::fg::magenta;
+        std::cout << rang::bg::magenta;
         break;
         case Black:
-        std::cout << rang::fg::black;
+        std::cout << rang::bg::black;
         break;
     }
 }
