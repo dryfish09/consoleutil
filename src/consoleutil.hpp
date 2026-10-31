@@ -103,5 +103,5 @@ inline void printc(const std::string& msg, color col) {
         std::cout <<rang::fg::magenta;
         break;
     }
-    std::cout << msg << rang::style::reset << '\n'
+    std::cout << msg << rang::style::reset << '\n';
 }
