@@ -1,8 +1,8 @@
 #include "cutils"
 int main() {
     // set
-    setBg(Cyan);
+    fih::setBg(Cyan);
     // reset
-    resetBg();
+    fih::resetBg();
     return 0;
 }
