@@ -7,8 +7,9 @@
 #include <iostream>
 // #include <string_view>          TODO: uncomment when i learned how to use this
 #include <string>
+#include <cstdlib>
 // log type enum
-enum logType = {
+enum logType {
     Info,
     Debug,
     Warn,
@@ -27,17 +28,27 @@ inline std::string enumToString(logType type) {
         return "ERROR";
         case Fatal:
         return "FATAL";
+        default:
+        return "NONE";
     }
 }
         
 /* 
-    log(string type, string text);
+    log(type, string text);
     example:
     - log(Info, "Initializing");
     - log(Warn, "Additional deps not found");
 */
 inline void log(logType typ, const std::string& text) {
     std::string type = enumToString(typ);
-    std::cout << type << ": " << text << '\n';
+    if (type == "INFO" || type == "DEBUG") {
+        std::cout << type << ": " << text << '\n';
+    } else {
+        std::cerr << type << ": " << text << '\n';
+    }
+}
+// this make u no need to include smth else
+inline void quit(int code) {
+    std::exit(code);
 }
 
