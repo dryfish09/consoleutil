@@ -3,6 +3,20 @@ This is a **simple, ez to use** console utils library for command-line app progr
 ## Requirement
 C++ 23+ (for future updates), C++ projects, `rang` library
 ## Usage
+### Import to a project
+1. Clone this repository:
+```bash
+git clone git@github.com:dryfish09/consoleutil
+```
+Or
+```bash
+git clone https://github.com/dryfish09/consoleutil.git
+```
+2. Copy source its source code to your project
+```bash
+cd consoleutil/src && cp * ur/project/path
+```
+3. Coding
 ### Basic use
 1. Logging
 ```cpp
