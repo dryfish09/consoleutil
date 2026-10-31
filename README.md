@@ -12,7 +12,7 @@ log(Info, "text");
 2. Exit (with auto flush stuff befor exit)
 ```cpp
 #include "consoleutil.hpp"
-exit(99);
+quit(99);
 ```
 ### Advanced use
 Contribute to this project
