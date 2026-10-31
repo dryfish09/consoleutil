@@ -1,6 +1,6 @@
 #include "cutils"
 int main() {
-    printc("hi!", Cyan); // supported: Green, Yellow, Black, Magenta, Red,...
-    printc("!", Red);
+    fih::printc("hi!", Cyan); // supported: Green, Yellow, Black, Magenta, Red,...
+    fih::printc("!", Red);
     return 0;
 }
