@@ -36,6 +36,8 @@ ask("are you gay?");
 ```cpp
 printc("msg", Blue);
 ```
+
+**For more example, view [CUtils's code examples](./examples/)
 ### Advanced use
 Contribute to this project
 ## Roadmap:
