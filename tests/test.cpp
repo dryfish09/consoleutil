@@ -1,5 +1,5 @@
 #include "cutils.hpp"
-
+using namespace fih;
 int main() {
     log(Info,  "smoke test: info");
     log(Debug, "smoke test: debug");
