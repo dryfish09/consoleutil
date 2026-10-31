@@ -4,8 +4,9 @@
 
 #pragma once 
 #include "./libs/rang.hpp"
-#include <iostream>
 #include <string>
+#include <iostream>
+#include <string_view>
 #include <cstdlib>
 // log type enum
 enum logType {
@@ -47,7 +48,7 @@ inline const char* enumToString(logType type) {
     - log(Info, "Initializing");
     - log(Warn, "Additional deps not found");
 */
-inline void log(logType typ, const std::string& text) {
+inline void log(logType typ, const std::string_view& text) {
     const char* type = enumToString(typ);
     if (typ == Info) {
         std::cout << rang::fg::cyan << "[" << type << ": " << text << "]"<< rang::style::reset << '\n';
@@ -71,7 +72,7 @@ inline void quit(int code) {
 }
 // ask()
 // usage: std::string name = ask("What's ur name);
-inline std::string ask(const std::string& question) {
+inline std::string ask(const std::string_view& question) {
     std::cout << rang::fg::green << question << rang::style::reset << '\n';
     std::string answer;
     std::getline(std::cin, answer);
@@ -79,7 +80,7 @@ inline std::string ask(const std::string& question) {
 }
 // print colorful (printc)
 // usage: printc("text", Red);
-inline void printc(const std::string& msg, color col) {
+inline void printc(const std::string_view& msg, color col) {
     switch (col) {
         case Red:
         std::cout << rang::fg::red;
