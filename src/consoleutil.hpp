@@ -2,7 +2,6 @@
 // usage: #include "consoleutil.hpp"
 // NOTE: THIS LIB IS IN DEVELOPMENT, you know
 
-// include guard, don't ask me why i use this
 #pragma once 
 #include "./libs/rang.hpp"
 #include <iostream>
@@ -16,6 +15,14 @@ enum logType {
     Warn,
     Error,
     Fatal
+};
+enum color {
+    Green,
+    Blue,
+    Cyan,
+    Gray,
+    Red,
+    Yellow
 };
 inline const char* enumToString(logType type) {
     switch(type) {
@@ -70,4 +77,28 @@ inline std::string ask(const std::string& question) {
     std::getline(std::cin, answer);
     return answer;
 }
-
+// print colorful (printc)
+// usage: printc("text", Red);
+inline void printc(std::string msg, color col) {
+    switch (col) {
+        case Red:
+        std::cout << fg::red;
+        break;
+        case Green:
+        std::cout << fg::green;
+        break;
+        case Blue:
+        std::cout << fg::blue;
+        break;
+        case Gray:
+        std::cout << fg::gray;
+        break;
+        case Cyan:
+        std::cout << fg::cyan;
+        break;
+        case Yellow:
+        std::cout << fg::yellow;
+        break;
+    }
+    std::cout << msg << style::reset;
+}
