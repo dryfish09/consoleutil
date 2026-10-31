@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string_view>
 #include <cstdlib>
+namespace fih {
 // log type enum
 enum logType {
     Info,
@@ -141,3 +142,4 @@ inline void setBg(color col) {
 inline void resetBg() {
     std::cout << rang::bg::reset;
 }
+} // namespace fih
