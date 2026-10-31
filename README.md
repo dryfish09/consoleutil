@@ -14,6 +14,14 @@ log(Info, "text");
 #include "consoleutil.hpp"
 quit(99);
 ```
+3. Ask
+```cpp
+ask("are you gay?");
+```
+4. Colorful print
+```cpp
+printc("msg", Blue);
+```
 ### Advanced use
 Contribute to this project
 ## Roadmap:
