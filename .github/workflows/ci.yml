@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: ${{ matrix.os }} / ${{ matrix.compiler }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            compiler: gcc
+            cxx: g++
+          - os: ubuntu-latest
+            compiler: clang
+            cxx: clang++
+          - os: windows-latest
+            compiler: msvc
+            cxx: cl
+          - os: macos-latest
+            compiler: clang
+            cxx: clang++
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Configure
+        run: cmake -S . -B build -DCONSOLEUTIL_BUILD_TESTS=ON
+        env:
+          CXX: ${{ matrix.cxx }}
+
+      - name: Build and test
+        run: |
+          cmake --build build --config Release --verbose
+          ctest --test-dir build -C Release --output-on-failure
+
+      - name: Verify test actually ran
+        shell: bash
+        run: |
+          echo "=== Test count ==="
+          ctest --test-dir build -C Release -N
+          echo "=== Test binary ==="
+          find build -name "test*" -type f | head -20
+
+  header-check:
+    name: Header self-contained
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: List header files
+        run: find . -name "consoleutil.hpp" -o -name "rang.hpp"
+
+      - name: Compile header alone
+        run: |
+          echo '#include "consoleutil.hpp"
+          int main() { return 0; }' > check.cpp
+          g++ -std=c++17 -Isrc -fsyntax-only check.cpp
