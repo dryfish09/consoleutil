@@ -19,6 +19,6 @@ Contribute to this project
 ## Roadmap:
 - [ ] Multi-thread support
 - [ ] Ez corountines
-- [ ] More API (console color, random, string spiliting, C#/Kotlin's QoL (not GC))
+- [ ] More API (console color, random, C#/Kotlin's QoL (not GC))
 
 *Made with :fish: by @dryfish09, Thanks for visiting!*
