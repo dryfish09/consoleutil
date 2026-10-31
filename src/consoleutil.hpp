@@ -106,7 +106,7 @@ inline void printc(const std::string_view& msg, color col) {
         break;
         case Black:
         std::cout << rang::fg::black;
-        break
+        break;
     }
     std::cout << msg << rang::style::reset << '\n';
 }
