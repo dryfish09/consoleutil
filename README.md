@@ -21,20 +21,20 @@ cd cutils/src && cp * ur/project/path
 1. Logging
 ```cpp
 #include "cutils.hpp"
-log(Info, "text");
+fih::log(Info, "text");
 ```
 2. Exit (with auto flush stuff before exit)
 ```cpp
 #include "cutils.hpp"
-quit(99);
+fih::quit(99);
 ```
 3. Ask
 ```cpp
-ask("are you gay?");
+fih::ask("are you gay?");
 ```
 4. Colorful print
 ```cpp
-printc("msg", Blue);
+fih::printc("msg", Blue);
 ```
 
 **For more example, view [CUtils's code examples](./examples/)
