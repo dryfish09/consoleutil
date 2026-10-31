@@ -33,10 +33,11 @@ inline std::string enumToString(logType type) {
 /* 
     log(string type, string text);
     example:
-    - log("INFO", "Initializing");
-    - log("WARN", "Additional deps not found");
+    - log(Info, "Initializing");
+    - log(Warn, "Additional deps not found");
 */
-inline void log(const std::string& type, const std::string& text) {
+inline void log(logType typ, const std::string& text) {
+    std::string type = enumToString(typ);
     std::cout << type << ": " << text << '\n';
 }
 
