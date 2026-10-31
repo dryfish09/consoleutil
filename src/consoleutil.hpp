@@ -7,7 +7,6 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-using namespace rang;
 // log type enum
 enum logType {
     Info,
@@ -22,9 +21,10 @@ enum color {
     Cyan,
     Gray,
     Red,
-    Yellow
+    Yellow,
+    Magenta
 };
-inline const char* enumToString(logType type) {
+inline constexpr char* enumToString(logType type) {
     switch(type) {
         case Info:
         return "INFO";
@@ -37,7 +37,7 @@ inline const char* enumToString(logType type) {
         case Fatal:
         return "FATAL";
         default:
-        return "NONE";
+        return "UNKNOWN";
     }
 }
         
@@ -50,13 +50,13 @@ inline const char* enumToString(logType type) {
 inline void log(logType typ, const std::string& text) {
     const char* type = enumToString(typ);
     if (typ == Info) {
-        std::cout << fg::cyan << "[" << type << ": " << text << "]"<< style::reset << '\n';
+        std::cout << rang::fg::cyan << "[" << type << ": " << text << "]"<< rang::style::reset << '\n';
     }
     else if (typ == Error || typ == Fatal) {
-        std::cout << fg::red << "[" << type << ": " << text << "]"<< style::reset << '\n';
+        std::cout << rang::fg::red << "[" << type << ": " << text << "]"<< rang::style::reset << '\n';
     }
     else if (typ == Warn) {
-        std::cout << fg::yellow << "[" << type << ": " << text << "]"<< style::reset << '\n';
+        std::cout << rang::fg::yellow << "[" << type << ": " << text << "]"<< rang::style::reset << '\n';
     }
     else {
         std::cout << "[" << type << "]" << ": " << text << '\n';
@@ -72,33 +72,36 @@ inline void quit(int code) {
 // ask()
 // usage: std::string name = ask("What's ur name);
 inline std::string ask(const std::string& question) {
-    std::cout << fg::green << question << style::reset << '\n';
+    std::cout << rang::fg::green << question << rang::style::reset << '\n' << std::flush;
     std::string answer;
     std::getline(std::cin, answer);
     return answer;
 }
 // print colorful (printc)
 // usage: printc("text", Red);
-inline void printc(std::string msg, color col) {
+inline void printc(const std::string& msg, color col) {
     switch (col) {
         case Red:
-        std::cout << fg::red;
+        std::cout << rang::fg::red;
         break;
         case Green:
-        std::cout << fg::green;
+        std::cout << rang::fg::green;
         break;
         case Blue:
-        std::cout << fg::blue;
+        std::cout << rang::fg::blue;
         break;
         case Gray:
-        std::cout << fg::gray;
+        std::cout << rang::fg::gray;
         break;
         case Cyan:
-        std::cout << fg::cyan;
+        std::cout << rang::fg::cyan;
         break;
         case Yellow:
-        std::cout << fg::yellow;
+        std::cout << rang::fg::yellow;
+        break;
+        case Magenta:
+        std::cout <<rang::fg::magenta;
         break;
     }
-    std::cout << msg << style::reset;
+    std::cout << msg << rang::style::reset << std::flush;
 }
