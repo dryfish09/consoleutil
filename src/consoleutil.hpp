@@ -4,10 +4,12 @@
 
 // include guard, don't ask me why i use this
 #pragma once 
+#include "./libs/rang.hpp"
 #include <iostream>
 // #include <string_view>          TODO: uncomment when i learned how to use this
 #include <string>
 #include <cstdlib>
+using namespace rang;
 // log type enum
 enum logType {
     Info,
@@ -41,10 +43,17 @@ inline std::string enumToString(logType type) {
 */
 inline void log(logType typ, const std::string& text) {
     std::string type = enumToString(typ);
-    if (type == "INFO" || type == "DEBUG") {
+    if (type == "INFO") {
+        std::cout << fg::cyan << type << ": " << text << style::reset << '\n';
+    }
+    else if (type == "ERROR" || type == "FATAL") {
+        std::cerr << fg::red << type << ": " << text << style::reset << '\n';
+    }
+    else if (type == "WARN") {
+        std::cout << fg::yellow << type << ": " << text << style::reset << '\n';
+    }
+    else {
         std::cout << type << ": " << text << '\n';
-    } else {
-        std::cerr << type << ": " << text << '\n';
     }
 }
 // this make u no need to include smth else
