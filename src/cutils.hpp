@@ -1,5 +1,5 @@
-// consoleutil.hpp - simple console utils for command-line app programming
-// usage: #include "consoleutil.hpp"
+// cutils.hpp - simple console utils for command-line app programming
+// usage: #include "cutils.hpp"
 // NOTE: THIS LIB IS IN DEVELOPMENT, you know...
 
 #pragma once 

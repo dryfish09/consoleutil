@@ -1,4 +1,4 @@
-#include "consoleutil.hpp"
+#include "cutils.hpp"
 
 int main() {
     log(Info,  "smoke test: info");

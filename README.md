@@ -1,31 +1,31 @@
 # DryFish's Console Utils library
-This is a **simple, ez to use** console utils library for command-line app programming
+CUtils (Console Utils) is a **simple, ez to use** console utils library for command-line app programming
 ## Requirement
 C++ 17+ (for future updates), C++ projects, all dependencies are included in this library, you just need to add it to your project, then use.
 ## Usage
 ### Import to a project
 1. Clone this repository:
 ```bash
-git clone git@github.com:dryfish09/consoleutil
+git clone git@github.com:dryfish09/cutils
 ```
 Or
 ```bash
-git clone https://github.com/dryfish09/consoleutil.git
+git clone https://github.com/dryfish09/cutils.git
 ```
 2. Copy source its source code to your project
 ```bash
-cd consoleutil/src && cp * ur/project/path
+cd cutils/src && cp * ur/project/path
 ```
 3. Coding
 ### Basic use
 1. Logging
 ```cpp
-#include "consoleutil.hpp"
+#include "cutils.hpp"
 log(Info, "text");
 ```
 2. Exit (with auto flush stuff before exit)
 ```cpp
-#include "consoleutil.hpp"
+#include "cutils.hpp"
 quit(99);
 ```
 3. Ask
