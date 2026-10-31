@@ -65,7 +65,7 @@ inline void quit(int code) {
 // ask()
 // usage: std::string name = ask("What's ur name);
 inline std::string ask(const std::string& question) {
-    std::cout << fg::green << question << style::clean << '\n';
+    std::cout << fg::green << question << style::reset << '\n';
     std::string answer;
     std::getline(std::cin, answer);
     return answer;
