@@ -6,5 +6,8 @@ int main() {
     log(Warn,  "smoke test: warn");
     log(Error, "smoke test: error");
     log(Fatal, "smoke test: fatal");
+    //printc
+    printc("txt", Red);
+    printc("t", Cyan);
     return 0;
 }
