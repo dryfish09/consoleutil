@@ -1,6 +1,6 @@
-// ConsoleUtil.hpp - simple console utils for command-line app programming
+// consoleutil.hpp - simple console utils for command-line app programming
 // usage: #include "consoleutil.hpp"
-// NOTE: THIS LIB IS IN DEVELOPMENT, you know
+// NOTE: THIS LIB IS IN DEVELOPMENT, you know...
 
 #pragma once 
 #include "./libs/rang.hpp"
@@ -23,7 +23,8 @@ enum color {
     Gray,
     Red,
     Yellow,
-    Magenta
+    Magenta,
+    Black
 };
 inline const char* enumToString(logType type) {
     switch(type) {
@@ -101,8 +102,11 @@ inline void printc(const std::string_view& msg, color col) {
         std::cout << rang::fg::yellow;
         break;
         case Magenta:
-        std::cout <<rang::fg::magenta;
+        std::cout << rang::fg::magenta;
         break;
+        case Black:
+        std::cout << rang::fg::black;
+        break
     }
     std::cout << msg << rang::style::reset << '\n';
 }
