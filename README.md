@@ -1,7 +1,7 @@
 # DryFish's Console Utils library
 This is a **simple, ez to use** console utils library for command-line app programming
 ## Requirement
-C++ 17+ (for future updates), C++ projects, `rang` library
+C++ 17+ (for future updates), C++ projects, all dependencies are included in this library, you just need to add it to your project, then use.
 ## Usage
 ### Import to a project
 1. Clone this repository:
