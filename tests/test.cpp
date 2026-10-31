@@ -9,5 +9,10 @@ int main() {
     //printc
     printc("txt", Red);
     printc("t", Cyan);
+    setBg(Blue);
+    resetBg();
+    setBg(Cyan);
+    printc(":)", Black);
+    resetBg();
     return 0;
 }
