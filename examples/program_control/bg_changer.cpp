@@ -4,4 +4,5 @@ int main() {
     setBg(Cyan);
     // reset
     resetBg();
+    return 0;
 }
