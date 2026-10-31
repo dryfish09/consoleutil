@@ -30,6 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Check CMake version
+        run: cmake --version
+
       - name: Configure
         run: cmake -S . -B build -DCONSOLEUTIL_BUILD_TESTS=ON
         env:
@@ -46,6 +49,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+
+      - name: List header files
+        run: find . -name "ConsoleUtil.hpp" -o -name "rang.hpp"
 
       - name: Compile header alone
         run: |
