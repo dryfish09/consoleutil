@@ -55,10 +55,19 @@ inline void log(logType typ, const std::string& text) {
         std::cout << "[" << type << "]" << ": " << text << '\n';
     }
 }
-// this make u no need to include smth else
+// std::exit wrapper
+// usage: quit(0);
 inline void quit(int code) {
     std::cout.flush();
     std::cerr.flush();
     std::exit(code);
+}
+// ask()
+// usage: std::string name = ask("What's ur name);
+inline std::string ask(const std::string& question) {
+    std::cout << fg::green << question << style::clean << '\n';
+    std::string answer;
+    std::getline(std::cin, answer);
+    return answer;
 }
 
