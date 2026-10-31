@@ -49,6 +49,8 @@ inline void log(logType typ, const std::string& text) {
 }
 // this make u no need to include smth else
 inline void quit(int code) {
+    std::cout.flush();
+    std::cerr.flush();
     std::exit(code);
 }
 
