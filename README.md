@@ -9,7 +9,7 @@ C++ 23+ (for future updates), C++ projects
 #include "consoleutil.hpp"
 log(Info, "text");
 ```
-2. Exit (with auto flush stuff befor exit)
+2. Exit (with auto flush stuff before exit)
 ```cpp
 #include "consoleutil.hpp"
 quit(99);
