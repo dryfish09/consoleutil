@@ -24,7 +24,7 @@ enum color {
     Yellow,
     Magenta
 };
-inline constexpr char* enumToString(logType type) {
+inline const char* enumToString(logType type) {
     switch(type) {
         case Info:
         return "INFO";
@@ -72,7 +72,7 @@ inline void quit(int code) {
 // ask()
 // usage: std::string name = ask("What's ur name);
 inline std::string ask(const std::string& question) {
-    std::cout << rang::fg::green << question << rang::style::reset << '\n' << std::flush;
+    std::cout << rang::fg::green << question << rang::style::reset << '\n';
     std::string answer;
     std::getline(std::cin, answer);
     return answer;
@@ -103,5 +103,5 @@ inline void printc(const std::string& msg, color col) {
         std::cout <<rang::fg::magenta;
         break;
     }
-    std::cout << msg << rang::style::reset << std::flush;
+    std::cout << msg << rang::style::reset << '\n'
 }
