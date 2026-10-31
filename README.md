@@ -20,4 +20,5 @@ Contribute to this project
 - [ ] Multi-thread support
 - [ ] Ez corountines
 - [ ] More API (console color, random, string spiliting, C#/Kotlin's QoL (not GC))
-g!
+
+*Made with :fish: by @dryfish09, Thanks for visiting!*
