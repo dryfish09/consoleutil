@@ -4,6 +4,7 @@
 
 #pragma once 
 #include "./libs/rang.hpp"
+#include <string>
 #include <iostream>
 #include <string_view>
 #include <cstdlib>
