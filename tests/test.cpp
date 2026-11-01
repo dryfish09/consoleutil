@@ -9,6 +9,9 @@ void test_logging() {
     log(Error, "smoke test: error");
     log(Fatal, "smoke test: fatal");
 }
+void test_ani() {
+    printAnim("ssggggggggtddhffffffffffffftttggggg", 40);
+}
 
 void test_colored_printing() {
     printc("txt", Red);
@@ -31,6 +34,6 @@ int main() {
     test_logging();
     test_colored_printing();
     test_delays();
-    
+    test_ani();
     return 0;
 }
