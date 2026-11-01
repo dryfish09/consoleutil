@@ -151,7 +151,9 @@ inline void delayForMillisec(int ms) {
     } else {
         log(Fatal, "Invalid delay agrument");
         quit(1);
+    }
 }
+
 inline void delayForSec(int sec) {
     if (sec > 0) {
         std::this_thread::sleep_for(std::chrono::seconds(sec));
