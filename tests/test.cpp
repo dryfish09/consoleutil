@@ -10,7 +10,7 @@ void test_logging() {
     log(Fatal, "smoke test: fatal");
 }
 void test_ani() {
-    printAni("ssggggggggtddhffffffffffffftttggggg", 40);
+    printAnim("ssggggggggtddhffffffffffffftttggggg", 40);
 }
 
 void test_colored_printing() {
