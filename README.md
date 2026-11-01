@@ -41,8 +41,10 @@ fih::printc("msg", fih::Blue);
 ### Advanced use
 Contribute to this project
 ## Roadmap:
-- [ ] Multi-thread support
-- [ ] Ez corountines
-- [ ] More API (console color, random, C#/Kotlin's QoL (not GC))
+- [ ] Basic console QoL
+- [ ] File I/O wrapper
+- [ ] JSON
+- [ ] Corountines
+- [ ] Kotlin/C# features/QoL (not GC)
 
 *Made with :fish: by @dryfish09, Thanks for visiting!*
