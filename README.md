@@ -37,7 +37,7 @@ fih::ask("are you gay?");
 fih::printc("msg", fih::Blue);
 ```
 
-**For more example, view [CUtils's code examples](./examples/)
+**For more example, view [CUtils's code examples](./examples/)**
 ### Advanced use
 Contribute to this project
 ## Roadmap:
