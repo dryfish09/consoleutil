@@ -162,4 +162,11 @@ inline void delayForSec(int sec) {
         quit(1);
     }
 }
+inline void printAnim(std::string_view msg, int ms_per_char) {
+    for (char c : msg) {
+        std::cout << c << std::flush; 
+        delayForMillisec(ms_per_char);
+    }
+    std::cout << '\n';
+}
 } // namespace fih
